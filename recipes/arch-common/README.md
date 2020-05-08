@@ -6,4 +6,4 @@ Arch image with common used programs
 - `git`
 - `vim`
 - `ntp`
-
+- `yay` - AUR helper
