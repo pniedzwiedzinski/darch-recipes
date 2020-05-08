@@ -1,0 +1,9 @@
+#!/bin/sh
+
+docker login --username "$DOCKER_LOGIN" --password "$DOCKER_PASSWORD"
+
+images=`ls recipes`
+
+for image in $images; do
+	docker push $SCOPE/$image
+done

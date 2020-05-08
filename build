@@ -1,0 +1,8 @@
+#!/bin/sh
+
+images=`ls recipes`
+
+for image in $images; do
+	docker build recipes/$image -t $SCOPE/$image
+done
+
