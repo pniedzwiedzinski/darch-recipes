@@ -1,7 +1,6 @@
 FROM pniedzwiedzinski/arch-base
 
 RUN pacman -S --noconfirm \
-      curl \
       wget \
       git \
       vim \

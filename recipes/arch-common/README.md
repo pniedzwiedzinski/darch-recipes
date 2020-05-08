@@ -2,7 +2,6 @@
 
 Arch image with common used programs
 
-- `curl`
 - `wget`
 - `git`
 - `vim`
