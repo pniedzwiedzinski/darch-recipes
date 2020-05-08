@@ -6,6 +6,9 @@ RUN pacman -S --noconfirm \
       vim \
       ntp
 
+RUN groupadd guest -g 1000 \
+    && useradd guest -g 1000 -u 1000
+
 RUN git clone https://aur.archlinux.org/yay-bin.git /tmp/yay \
     && cd /tmp/yay \
     && chmod 777 /tmp/yay \
