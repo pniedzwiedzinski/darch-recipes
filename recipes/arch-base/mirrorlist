@@ -5,33 +5,33 @@
 ##
 
 ## Poland
-#Server = http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/$repo/os/$arch
+Server = http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/$repo/os/$arch
 ## Indonesia
 #Server = http://mirror.telkomuniversity.ac.id/archlinux/$repo/os/$arch
 ## Netherlands
 #Server = http://mirror.mijn.host/archlinux/$repo/os/$arch
 ## United States
-#Server = http://arch.mirror.square-r00t.net/$repo/os/$arch
+Server = http://arch.mirror.square-r00t.net/$repo/os/$arch
 ## France
-#Server = https://mirrors.eric.ovh/arch/$repo/os/$arch
+Server = https://mirrors.eric.ovh/arch/$repo/os/$arch
 ## Germany
-#Server = http://mirrors.n-ix.net/archlinux/$repo/os/$arch
+Server = http://mirrors.n-ix.net/archlinux/$repo/os/$arch
 ## Belarus
 #Server = http://mirror.datacenter.by/pub/archlinux/$repo/os/$arch
 ## Netherlands
 #Server = http://mirrors.xtom.nl/archlinux/$repo/os/$arch
 ## Germany
-#Server = https://ftp.spline.inf.fu-berlin.de/mirrors/archlinux/$repo/os/$arch
+Server = https://ftp.spline.inf.fu-berlin.de/mirrors/archlinux/$repo/os/$arch
 ## United Kingdom
-#Server = https://mirrors.melbourne.co.uk/archlinux/$repo/os/$arch
+Server = https://mirrors.melbourne.co.uk/archlinux/$repo/os/$arch
 ## Germany
-#Server = https://mirrors.n-ix.net/archlinux/$repo/os/$arch
+Server = https://mirrors.n-ix.net/archlinux/$repo/os/$arch
 ## Poland
-#Server = http://ftp.vectranet.pl/archlinux/$repo/os/$arch
+Server = http://ftp.vectranet.pl/archlinux/$repo/os/$arch
 ## Romania
 #Server = http://mirrors.chroot.ro/archlinux/$repo/os/$arch
 ## United States
-#Server = http://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch
+Server = http://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch
 ## Spain
 #Server = https://osl.ugr.es/archlinux/$repo/os/$arch
 ## Indonesia
