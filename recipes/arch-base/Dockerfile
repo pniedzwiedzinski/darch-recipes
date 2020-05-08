@@ -10,3 +10,5 @@ RUN pacman -S --noconfirm \
       systemd \
       base-devel \
     && systemctl enable NetworkManager
+
+RUN ln -s /usr/bin/init /lib/systemd/systemd
