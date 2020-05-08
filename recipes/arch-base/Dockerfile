@@ -7,9 +7,7 @@ RUN pacman -S --noconfirm \
       linux \
       linux-firmware \
       networkmanager \
-      systemd \
-      systemd-sysvcompat \
       base-devel \
     && systemctl enable NetworkManager
 
-RUN ln -s /lib/systemd/systemd /usr/bin/init
+RUN ln -s /lib/systemd/systemd /sbin/init
