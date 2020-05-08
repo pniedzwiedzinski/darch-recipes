@@ -4,7 +4,7 @@ These are my os recipes for [Darch](https://github.com/godarch/darch).
 
 ## Images
 
-Each images is bootable and ready to go
+Each image is bootable and ready to go
 
 - [pniedzwiedzinski/arch-base](recipes/arch-base)
 - [pniedzwiedzinski/arch-common](recipes/arch-common)
