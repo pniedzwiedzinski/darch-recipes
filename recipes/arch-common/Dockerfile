@@ -5,7 +5,3 @@ RUN pacman -S --noconfirm \
       git \
       vim \
       ntp
-
-RUN git clone https://aur.archlinux.org/yay.git /tmp/yay \
-    && cd /tmp/yay \
-    && makepkg -si
