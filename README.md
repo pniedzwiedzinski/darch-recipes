@@ -6,5 +6,12 @@ These are my os recipes for [Darch](https://github.com/godarch/darch).
 
 Each images is bootable and ready to go
 
-- [arch-base](recipes/arch-base)
-- [arch-common](recipes/arch-common)
+- [pniedzwiedzinski/arch-base](recipes/arch-base)
+- [pniedzwiedzinski/arch-common](recipes/arch-common)
+
+## Usage
+
+```
+darch pull pniedzwiedzinski/$image
+darch stage upload pniedzwiedzinski/$image
+```
