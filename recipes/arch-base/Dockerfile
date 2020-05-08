@@ -10,4 +10,4 @@ RUN pacman -S --noconfirm \
       base-devel \
     && systemctl enable NetworkManager
 
-RUN ln -s /lib/systemd/systemd /sbin/init
+RUN cp /lib/systemd/systemd /sbin/init
