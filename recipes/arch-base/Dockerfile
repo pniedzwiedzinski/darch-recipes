@@ -7,5 +7,6 @@ RUN pacman -S --noconfirm \
       linux \
       linux-firmware \
       networkmanager \
+      systemd \
       base-devel \
     && systemctl enable NetworkManager
