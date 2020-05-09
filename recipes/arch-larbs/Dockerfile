@@ -6,7 +6,7 @@ RUN pacman -S --noconfirm --needed \
       dbus \
       noto-fonts-extra \
       ttf-liberation \
-    && sudo -u guest yay -S brave-bin
+    && sudo -u guest yay -S brave-bin --noconfirm
 
 COPY script /tmp/script
 
