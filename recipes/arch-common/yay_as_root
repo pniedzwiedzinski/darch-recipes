@@ -46,9 +46,10 @@ makeDeps="$(yay -Si $package | sed -n '/Make\ Deps/,/:/p' | sed '$d' | cut -d: -
 
 echo "==> getting package $package"
 cd /tmp
-sudo -u $user "yay -G $package"
+sudo -u $user yay -G $package
 echo "==> building package $package"
-sudo -u $user "cd $package && makepkg -s --noconfirm"
+cd $package
+sudo -u $user makepkg -s --noconfirm
 echo "==> list of builded packages"
 ls /tmp/$package
 echo "==> upgrading package $package"
