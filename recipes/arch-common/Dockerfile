@@ -7,7 +7,9 @@ RUN pacman -S --noconfirm \
       ntp
 
 RUN groupadd guest -g 1000 \
-    && useradd guest -g 1000 -u 1000
+    && useradd guest -g 1000 -u 1000 \
+    && mkdir -m 744 /home/guest \
+    && chown 1000:1000 /home/guest
 
 RUN git clone https://aur.archlinux.org/yay-bin.git /tmp/yay \
     && cd /tmp/yay \
