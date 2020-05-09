@@ -24,6 +24,7 @@ RUN cp /home/guest/.config/i3/config /etc/i3/config \
     && cp -r /home/guest/.config/mpv /etc/mpv \
     && cp /home/guest/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim \
     && cp /home/guest/.config/zathura/zathurarc /etc/zathurarc \
+    && cp /home/guest/.config/.xinitrc /etc/X11/xinit/xinitrc \
     && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.config/xprofile
 
 
