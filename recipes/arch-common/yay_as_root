@@ -1,0 +1,59 @@
+#!/bin/sh
+# This script install package as user 1000
+
+user="$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)"
+
+function filter_new () {
+    local new
+
+    for package in "$@"; do
+        >&2 echo "==> checking is $package in system"
+        if pacman -Q "$package" > /dev/null 2>&1; then 
+            >&2 echo "==> $package already present in system"
+        else
+            >&2 echo "==> adding $package to new"
+            new+=("$package")
+        fi
+    done
+
+    echo "${new[@]}"
+}
+
+package="$1"
+
+dependencies="$(yay -Si $package | sed -n '/Depends\ On/,/:/p' | sed '$d' | cut -d: -f2 | tr '\n' ' ' | sed -r 's| +| |g' | xargs echo)"
+
+if [ "$dependencies" != "None" ]; then
+        d="$(filter_new $dependencies)"
+        if [[ -z ${d[@]} ]]; then
+            echo "==> all deps already installed"
+        else
+            echo "==> installing deps: $d"
+            pacman -S --noconfirm --needed $d
+        fi
+fi
+
+makeDeps="$(yay -Si $package | sed -n '/Make\ Deps/,/:/p' | sed '$d' | cut -d: -f2 | tr '\n' ' ' | sed -r 's| +| |g' | xargs echo)"
+    if [ "$makeDeps" != "None" ]; then
+        md="$(filter_new $makeDeps)"
+        if [[ -z ${md[@]} ]]; then
+            echo "==> all make deps already installed"
+        else
+            echo "==> installing make deps: $md"
+            pacman -S --noconfirm --needed $md
+        fi
+    fi
+
+echo "==> getting package $package"
+cd /tmp
+sudo -u $user "yay -G $package"
+echo "==> building package $package"
+sudo -u $user "cd $package && makepkg -s --noconfirm"
+echo "==> list of builded packages"
+ls /tmp/$package
+echo "==> upgrading package $package"
+pushd /tmp/$package
+pacman -U --noconfirm --needed --overwrite /usr/share/man/man8/\* $(ls | grep .pkg.)
+popd
+echo "==> cleanup: remove /tmp/$package"
+rm -r "/tmp/$package/"
