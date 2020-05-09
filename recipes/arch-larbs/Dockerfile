@@ -1,9 +1,5 @@
 FROM pniedzwiedzinski/arch-common
 
-COPY script /tmp/script
-
-RUN /tmp/script
-
 RUN pacman -S --noconfirm --needed \
       zsh \
       xterm \
@@ -11,3 +7,9 @@ RUN pacman -S --noconfirm --needed \
       noto-fonts-extra \
       ttf-liberation \
       brave-bin
+
+COPY script /tmp/script
+
+RUN /tmp/script
+
+
