@@ -1,6 +1,7 @@
 FROM pniedzwiedzinski/arch-common
 
 RUN pacman -S --noconfirm --needed \
+      xorg \
       zsh \
       xterm \
       dbus \
