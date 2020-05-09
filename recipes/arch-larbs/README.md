@@ -20,4 +20,7 @@ FROM pniedzwiedzinski/arch-larbs
 
 RUN usermod -l user -d /home/user guest \
     && echo -e "user:password" | chpasswd
+
+# You probably also want to have access to sudo
+RUN usermod -aG sudo user
 ```
