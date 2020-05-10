@@ -13,10 +13,9 @@ COPY script /tmp/script
 
 RUN /tmp/script
 
-RUN mkdir -p /etc/dunst
-
 # Make dotfiles default global configuration
-RUN cp /home/guest/.config/i3/config /etc/i3/config \
+RUN mkdir -p /etc/dunst \
+    && cp /home/guest/.config/i3/config /etc/i3/config \
     && cp /home/guest/.config/i3blocks/config /etc/i3block.conf \
     && cp /home/guest/.config/dunst/dunstrc /etc/dunst/dunstrc \
     && cp /home/guest/.config/fontconfig/fonts.conf /etc/fonts/local.conf \
@@ -27,4 +26,7 @@ RUN cp /home/guest/.config/i3/config /etc/i3/config \
     && cp /home/guest/.xinitrc /etc/X11/xinit/xinitrc \
     && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.config/xprofile
 
-
+# Install utils
+RUN pacman -S --noconfirm \
+      pavucontrol \
+      gtk2
