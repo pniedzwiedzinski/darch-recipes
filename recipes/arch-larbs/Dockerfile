@@ -24,7 +24,9 @@ RUN mkdir -p /etc/dunst \
     && cp /home/guest/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim \
     && cp /home/guest/.config/zathura/zathurarc /etc/zathurarc \
     && cp /home/guest/.xinitrc /etc/X11/xinit/xinitrc \
-    && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.config/xprofile
+    && cp -r /home/guest/.local/bin /usr/local/larbs \
+    && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.config/xprofile \
+    && echo "export PATH=$PATH:/usr/local/larbs:/usr/local/larbs/statusbar:/usr/local/larbs/i3cmds:/usr/local/larbs/cron" >> /etc/profile
 
 # Install utils
 RUN pacman -S --noconfirm \
