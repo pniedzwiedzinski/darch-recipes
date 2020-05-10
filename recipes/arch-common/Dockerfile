@@ -5,7 +5,8 @@ RUN pacman -S --noconfirm \
       wget \
       git \
       vim \
-      ntp
+      ntp \
+      darch
 
 RUN groupadd guest -g 1000 \
     && useradd guest -g 1000 -u 1000 \
