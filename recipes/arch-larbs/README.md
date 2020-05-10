@@ -15,12 +15,16 @@ There is a preconfigured user `guest` (uid: `1000`, gid: `1000`), that you can l
 
 Changing user
 
-```Dockerfile
-FROM pniedzwiedzinski/arch-larbs
+```sh
+#!/bin/sh
 
-RUN usermod -l user -d /home/user guest \
-    && echo -e "user:password" | chpasswd
+usermod -l pn -d /home/pn guest
+groupmod -n pn guest
+groupadd sudo
+usermod -aG sudo pn
 
-# You probably also want to have access to sudo
-RUN usermod -aG sudo user
+cp shadow /etc/shadow
+
+ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+
 ```
