@@ -1,4 +1,6 @@
 FROM pniedzwiedzinski/arch-larbs-thinkpad
 
 RUN pacman -S --noconfirm \
-      docker
+      docker \
+      emacs \
+    && yay_as_root github-cli
