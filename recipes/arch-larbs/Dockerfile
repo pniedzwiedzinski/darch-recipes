@@ -34,4 +34,4 @@ RUN mkdir -p /etc/dunst \
 RUN pacman -S --noconfirm \
       pavucontrol \
       gtk2 \
-      j4-dmenu-desktop
+    && yay_as_root j4-dmenu-desktop
