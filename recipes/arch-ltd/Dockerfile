@@ -4,4 +4,5 @@ RUN pacman -S --noconfirm \
       docker \
       emacs \
     && yay_as_root github-cli \
-    && yay_as_root qrcp
+    && yay_as_root qrcp \
+    && yay_as_root alacritty
