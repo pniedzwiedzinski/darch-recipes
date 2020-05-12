@@ -4,5 +4,5 @@ RUN pacman -S --noconfirm \
       acpi_call \
       tpacpi-bat \
       tlp \
-    && yay_as_root dockd \
+#    && yay_as_root dockd \
     && modprobe acpi_call
