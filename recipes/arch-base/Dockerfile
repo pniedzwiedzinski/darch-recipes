@@ -1,7 +1,6 @@
 FROM godarch/arch:latest
 
 COPY mkinitcpio.conf /etc/mkinitcpio.conf
-COPY mirrorlist /etc/pacman.d/mirrorlist
 
 RUN pacman -Syyu \
     && pacman -S --noconfirm \

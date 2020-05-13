@@ -1,6 +1,0 @@
-Server = http://mirror.onet.pl/pub/mirrors/archlinux/$repo/os/$arch
-Server = https://mirror.i3d.net/pub/archlinux/$repo/os/$arch
-Server = http://mirrors.evowise.com/archlinux/$repo/os/$arch
-Server = https://mirror.pkgbuild.com/$repo/os/$arch
-Server = https://arch.nixlab.pl/$repo/os/$arch
-Server = http://artfiles.org/archlinux.org/$repo/os/$arch
