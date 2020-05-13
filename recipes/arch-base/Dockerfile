@@ -3,7 +3,8 @@ FROM godarch/arch:latest
 COPY mkinitcpio.conf /etc/mkinitcpio.conf
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
-RUN pacman -S --noconfirm \
+RUN pacman -Syyu \
+    && pacman -S --noconfirm \
       linux \
       linux-firmware \
       networkmanager \
