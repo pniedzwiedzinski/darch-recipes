@@ -5,8 +5,7 @@ RUN pacman -S --noconfirm \
       wget \
       git \
       vim \
-      ntp \
-      darch
+      ntp
 
 RUN groupadd guest -g 1000 \
     && useradd guest -g 1000 -u 1000 \
@@ -20,3 +19,5 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /tmp/yay \
     && pacman -U --noconfirm --needed /tmp/yay/$(ls /tmp/yay/ | grep tar.xz)
 
 COPY yay_as_root /usr/bin/yay_as_root
+
+RUN yay_as_root darch
