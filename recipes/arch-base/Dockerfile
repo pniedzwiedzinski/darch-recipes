@@ -2,7 +2,7 @@ FROM godarch/arch:latest
 
 COPY mkinitcpio.conf /etc/mkinitcpio.conf
 
-RUN pacman -Syy \
+RUN pacman -Syyu --noconfirm \
     && pacman -S --noconfirm \
       linux \
       linux-firmware \
