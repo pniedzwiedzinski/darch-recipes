@@ -8,6 +8,7 @@ RUN pacman -S --noconfirm --needed \
       dbus \
       noto-fonts-extra \
       ttf-liberation \
+      xcompmgr \
     && yay_as_root brave-bin \
     && yay_as_root ranger \
     && yay_as_root python-ueberzug
