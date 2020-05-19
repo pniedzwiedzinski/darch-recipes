@@ -197,10 +197,8 @@ ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 # installs each needed program the way required. Be sure to run this only after
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
+aurinstall "libxft-bgra" "Emojis in suckless software"
 installationloop
-
-echo "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes."
-yes | sudo -u "$name" $aurhelper -S libxft-bgra >/dev/null 2>&1
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
