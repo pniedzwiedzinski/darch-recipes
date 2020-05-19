@@ -19,5 +19,6 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /tmp/yay \
     && pacman -U --noconfirm --needed /tmp/yay/$(ls /tmp/yay/ | grep tar.xz)
 
 COPY yay_as_root /usr/bin/yay_as_root
+COPY containerd.toml /etc/containerd/config.toml
 
-RUN yay_as_root darch
+RUN yay_as_root darch && systemctl enable containerd

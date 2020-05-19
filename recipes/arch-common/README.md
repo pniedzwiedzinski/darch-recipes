@@ -7,4 +7,5 @@ Arch image with common used programs
 - `vim`
 - `ntp`
 - `yay` - AUR helper
+- `darch` - For managing os
 - Add user `guest` (uid: `1000`, gui: `1000`)
