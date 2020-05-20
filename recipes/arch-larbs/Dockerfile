@@ -38,5 +38,4 @@ RUN mkdir -p /etc/dunst \
 # Install utils
 RUN pacman -S --noconfirm \
       pavucontrol \
-      gtk2 \
-    && sudo -u '#1000' yay -S --noconfirm j4-dmenu-desktop
+      gtk2
