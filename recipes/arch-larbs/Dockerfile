@@ -9,7 +9,7 @@ RUN pacman -S --noconfirm --needed \
       noto-fonts-extra \
       ttf-liberation \
       xcompmgr \
-    && sudo -u #1000 yay -S --noconfirm \
+    && sudo -u '#1000' yay -S --noconfirm \
       brave-bin \
       ranger \
       python-ueberzug
@@ -39,4 +39,4 @@ RUN mkdir -p /etc/dunst \
 RUN pacman -S --noconfirm \
       pavucontrol \
       gtk2 \
-    && sudo -u #1000 yay -S --noconfirm j4-dmenu-desktop
+    && sudo -u '#1000' yay -S --noconfirm j4-dmenu-desktop

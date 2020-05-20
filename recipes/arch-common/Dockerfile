@@ -9,7 +9,9 @@ RUN pacman -S --noconfirm \
       grub
 
 RUN groupadd guest -g 1000 \
-    && useradd guest -g 1000 -u 1000 \
+    && groupadd sudo -g 27 \
+    && useradd guest -g 1000 -u 1000 -G sudo \
+    && echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
     && mkdir -m 744 /home/guest \
     && chown 1000:1000 /home/guest
 
@@ -21,4 +23,4 @@ RUN git clone https://aur.archlinux.org/yay-bin.git /tmp/yay \
 
 COPY containerd.toml /etc/containerd/config.toml
 
-RUN sudo -u #1000 yay -S --noconfirm darch && systemctl enable containerd
+RUN sudo -u '#1000' yay -S --noconfirm darch && systemctl enable containerd
