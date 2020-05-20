@@ -7,4 +7,5 @@ RUN pacman -S --noconfirm \
       github-cli \
       qrcp \
       alacritty \
-      docker-compose
+      docker-compose \
+      ripgrep
