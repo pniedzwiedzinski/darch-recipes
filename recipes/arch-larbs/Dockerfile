@@ -12,7 +12,8 @@ RUN pacman -S --noconfirm --needed \
     && sudo -u '#1000' yay -S --noconfirm \
       brave-bin \
       ranger \
-      python-ueberzug
+      python-ueberzug \
+      libxft-bgra
 
 COPY script /tmp/script
 
