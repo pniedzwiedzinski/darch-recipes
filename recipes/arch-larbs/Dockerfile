@@ -1,6 +1,11 @@
 FROM pniedzwiedzinski/arch-common
 
-RUN pacman -S --noconfirm --needed \
+RUN sudo -u '#1000' yay -S --noconfirm \
+      brave-bin \
+      ranger \
+      python-ueberzug \
+      libxft-bgra \
+    && pacman -S --noconfirm --needed \
       xorg \
       nettle \
       zsh \
@@ -8,13 +13,7 @@ RUN pacman -S --noconfirm --needed \
       dbus \
       noto-fonts-extra \
       ttf-liberation \
-      xcompmgr \
-    && pacman -R libxft --noconfirm \
-    && sudo -u '#1000' yay -S --noconfirm \
-      brave-bin \
-      ranger \
-      python-ueberzug \
-      libxft-bgra
+      xcompmgr
 
 COPY script /tmp/script
 
