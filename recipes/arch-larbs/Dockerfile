@@ -9,6 +9,7 @@ RUN pacman -S --noconfirm --needed \
       noto-fonts-extra \
       ttf-liberation \
       xcompmgr \
+    && pacman -R libxft --noconfirm \
     && sudo -u '#1000' yay -S --noconfirm \
       brave-bin \
       ranger \
