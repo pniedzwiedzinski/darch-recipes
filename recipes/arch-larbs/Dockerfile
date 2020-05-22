@@ -1,10 +1,10 @@
 FROM pniedzwiedzinski/arch-common
 
-RUN sudo -u '#1000' yay -S --noconfirm \
+RUN sudo -u '#1000' yay -S --noconfirm libxft-bgra \
+    && sudo -u '#1000' yay -S --noconfirm --needed \
       brave-bin \
       ranger \
       python-ueberzug \
-      libxft-bgra \
     && pacman -S --noconfirm --needed \
       xorg \
       nettle \
@@ -37,6 +37,6 @@ RUN mkdir -p /etc/dunst \
     && echo "export PATH=$PATH:/usr/local/larbs:/usr/local/larbs/statusbar:/usr/local/larbs/i3cmds:/usr/local/larbs/cron" >> /etc/profile
 
 # Install utils
-RUN pacman -S --noconfirm \
+RUN pacman -S --noconfirm --needed \
       pavucontrol \
       gtk2
