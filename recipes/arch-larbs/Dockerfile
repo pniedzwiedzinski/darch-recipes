@@ -10,6 +10,7 @@ RUN sudo -u '#1000' yay -S --noconfirm libxft-bgra \
       noto-fonts-extra \
       ttf-liberation \
       xcompmgr \
+      htop \
     && sudo -u '#1000' yay -S --noconfirm --needed \
       brave-bin \
       ranger \

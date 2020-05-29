@@ -6,7 +6,9 @@ RUN pacman -S --noconfirm \
       git \
       vim \
       ntp \
-      grub
+      iputils \
+      grub \
+      cronie
 
 RUN groupadd guest -g 1000 \
     && groupadd sudo -g 27 \
