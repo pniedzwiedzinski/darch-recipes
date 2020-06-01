@@ -8,6 +8,7 @@ RUN pacman -S --noconfirm \
       ntp \
       iputils \
       grub \
+      zip \
       cronie
 
 RUN groupadd guest -g 1000 \
