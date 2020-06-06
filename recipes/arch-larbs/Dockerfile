@@ -1,6 +1,6 @@
 FROM pniedzwiedzinski/arch-common
 
-RUN sudo -u '#1000' yay -S --noconfirm libxft-bgra \
+RUN sudo -u '#1000' yay -S --noconfirm libxft-bgra-git \
     && pacman -S --noconfirm --needed \
       xorg \
       nettle \
