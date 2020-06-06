@@ -1,7 +1,7 @@
 FROM pniedzwiedzinski/arch-common
 
 RUN sudo -u '#1000' yay -S --noconfirm \
-      xorg-macros \
+      xutils-dev \
       libxft-bgra-git \
     && pacman -S --noconfirm --needed \
       xorg \
