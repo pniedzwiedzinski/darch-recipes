@@ -1,9 +1,12 @@
 FROM pniedzwiedzinski/arch-common
 
-RUN sudo -u '#1000' yay -S --noconfirm \
-      xorg-util-macros \
-    #  libxft-bgra-git \
-    && pacman -S --noconfirm --needed \
+RUN git clone https://aur.archlinux.org/libxft-bgra.git /tmp/libxft-bgra \
+    && cd /tmp/libxft-bgra \
+    && chmod 777 /tmp/libxft-bgra \
+    && sudo -u '#1000' makepkg -Acs --noconfirm --skippgpcheck
+
+
+RUN pacman -S --noconfirm --needed \
       xorg \
       nettle \
       zsh \

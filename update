@@ -25,6 +25,6 @@ else
 	BOOT_IMAGE="$BASE_IMAGE"
 fi
 
-darch stage remove $BOOT_IMAGE:prev
-darch stage tag $BOOT_IMAGE $BOOT_IMAGE:prev
+darch stage remove $BOOT_IMAGE:prev || true
+darch stage tag $BOOT_IMAGE $BOOT_IMAGE:prev || true
 darch stage upload $BOOT_IMAGE --force
