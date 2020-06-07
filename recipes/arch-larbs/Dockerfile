@@ -3,7 +3,8 @@ FROM pniedzwiedzinski/arch-common
 RUN git clone https://aur.archlinux.org/libxft-bgra.git /tmp/libxft-bgra \
     && cd /tmp/libxft-bgra \
     && chmod 777 /tmp/libxft-bgra \
-    && sudo -u '#1000' makepkg -Acs --noconfirm --skippgpcheck
+    && sudo -u '#1000' makepkg -s --noconfirm --skippgpcheck \
+    && pacman -U *.pkg.tar.xz --noconfirm
 
 
 RUN pacman -S --noconfirm --needed \
