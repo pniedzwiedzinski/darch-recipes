@@ -1,10 +1,12 @@
 #!/bin/sh
+## Author: Patryk Niedźwiedziński
 ## Darch system update: pull the newest image, build recipe, upload to stage
 
 ## Configuration
 BASE_IMAGE="pniedzwiedzinski/arch-ltd" # Your os image / recipe base
 RECIPE="larbs-pn"
 RECIPE_LOCATION="/home/pn/code/darch-recipes/personal-recipes"
+## ----- Configuration end
 
 set -eu pipefail
 
@@ -25,6 +27,12 @@ else
 	BOOT_IMAGE="$BASE_IMAGE"
 fi
 
-darch stage remove $BOOT_IMAGE:prev || true
-darch stage tag $BOOT_IMAGE $BOOT_IMAGE:prev || true
+if [ "$(darch stage current)" != "$BOOT_IMAGE:prev" ]; then
+	darch stage remove $BOOT_IMAGE:prev || true
+	darch stage tag $BOOT_IMAGE $BOOT_IMAGE:prev || true
+else
+	printf "========================\n\n"
+	printf "Running outdated version - replacing previous update\nStay safe! I still love you!"
+	printf "\n\n========================"
+fi
 darch stage upload $BOOT_IMAGE --force
