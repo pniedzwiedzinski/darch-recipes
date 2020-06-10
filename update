@@ -31,8 +31,10 @@ if [ "$(darch stage current)" != "$BOOT_IMAGE:prev" ]; then
 	darch stage remove $BOOT_IMAGE:prev || true
 	darch stage tag $BOOT_IMAGE $BOOT_IMAGE:prev || true
 else
+	set +x
 	printf "========================\n\n"
 	printf "Running outdated version - replacing previous update\nStay safe! I still love you!"
 	printf "\n\n========================"
+	set -x
 fi
 darch stage upload $BOOT_IMAGE --force
