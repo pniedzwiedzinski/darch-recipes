@@ -21,7 +21,6 @@ RUN pacman -S --noconfirm --needed \
     && sudo -u '#1000' yay -S --noconfirm --needed \
       brave-bin \
       ranger \
-      backlight_control \
       python-ueberzug
 
 
