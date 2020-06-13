@@ -20,6 +20,7 @@ RUN pacman -S --noconfirm --needed \
     && sudo -u '#1000' yay -S --noconfirm --needed \
       brave-bin \
       ranger \
+      backlight_control \
       python-ueberzug
 
 
@@ -39,6 +40,7 @@ RUN mkdir -p /etc/dunst \
     && cp -r /home/guest/.local/bin /usr/local/larbs \
     && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.xprofile \
     && echo "export PATH=$PATH:/usr/local/larbs:/usr/local/larbs/statusbar:/usr/local/larbs/i3cmds:/usr/local/larbs/cron" >> /etc/profile
+    && sed 's/\/* {"",	"memory",	10,	14}, *\//{"",	"memory",	10,	14},/'
 
 # Install utils
 RUN pacman -S --noconfirm --needed \
