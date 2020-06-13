@@ -17,6 +17,7 @@ RUN pacman -S --noconfirm --needed \
       ttf-liberation \
       xcompmgr \
       htop \
+      sxhkd \
     && sudo -u '#1000' yay -S --noconfirm --needed \
       brave-bin \
       ranger \
