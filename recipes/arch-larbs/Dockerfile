@@ -31,7 +31,7 @@ RUN /tmp/script
 
 # Make dotfiles default global configuration
 RUN mkdir -p /etc/dunst \
-    && cp /home/guest/.config/dunst/dunstrc /etc/dunst/dunstrc \
+    && cp /home/guest/.config/dunst/dunstrc /usr/share/dunst/dunstrc \
     && cp /home/guest/.config/fontconfig/fonts.conf /etc/fonts/local.conf \
     && cp -r /home/guest/.config/vifm /etc/vifm \
     && cp -r /home/guest/.config/mpv /etc/mpv \
@@ -39,7 +39,6 @@ RUN mkdir -p /etc/dunst \
     && cp /home/guest/.config/zathura/zathurarc /etc/zathurarc \
     && cp /home/guest/.xinitrc /etc/X11/xinit/xinitrc \
     && cp -r /home/guest/.local/bin /usr/local/larbs \
-    && sed 's/dunst &/dunst -conf \/etc\/dunst\/dunstrc/' /home/guest/.xprofile \
     && echo "export PATH=$PATH:/usr/local/larbs:/usr/local/larbs/statusbar:/usr/local/larbs/i3cmds:/usr/local/larbs/cron" >> /etc/profile
 
 # Install utils
