@@ -9,5 +9,6 @@ RUN pacman -S --noconfirm \
       qrcp \
       alacritty \
       docker-compose \
+      x11docker \
       ripgrep \
     && sed '/^guest ALL=(ALL) NOPASS/d' /etc/sudoers
