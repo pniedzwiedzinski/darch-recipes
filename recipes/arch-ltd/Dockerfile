@@ -11,4 +11,5 @@ RUN pacman -S --noconfirm \
       docker-compose \
       x11docker \
       ripgrep \
+      nix \
     && sed '/^guest ALL=(ALL) NOPASS/d' /etc/sudoers
